@@ -1,5 +1,6 @@
 import React,{ Component} from 'react';
-import comp from './myStateLesscomp';
+import MyComp from './myStateComp';
+
 
 class myComp extends Component {
   constructor(){
@@ -13,9 +14,9 @@ class myComp extends Component {
     return (
       <div>
         <h1>Hello</h1>
-        <h1>Hello</h1>    
+        <h1>Hello</h1>
 
-        <comp />
+        <MyComp val="Hello" />
      </div>
     )
   }
