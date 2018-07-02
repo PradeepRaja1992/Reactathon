@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
-import MyComp from './components/mycomp';
+import MenuBar from './components/menuBarComp';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          <h3>Hello</h3>
-          <MyComp />
+          <MenuBar />
       </div>
     );
   }
