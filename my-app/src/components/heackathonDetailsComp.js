@@ -1,16 +1,25 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import DetailsList from './detailsListComp';
+import Api from '../Api/hackDetailsApi';
 
 class DetailsComp extends Component{
+
+  componentDidMount(){
+    console.log("My compoenent will mound ",this.props);
+    this.props.fetchData();
+  }
+
   render(){
     return(
       <div>
-         <h3>Detailed view page!!</h3>
-         <ul>
-             {this.props.hackDetails.map((details) =>{
-               return (<li>{details.name}</li>)
-             })}
-         </ul>
+            <div className="ui relaxed divided list">       
+             {
+               this.props.hackDetails.map((details) =>{
+                return ( <DetailsList {...details} /> )
+                })
+             }
+            </div>         
       </div>
     )
   }
@@ -18,8 +27,17 @@ class DetailsComp extends Component{
 
 function mapStateToProps(state){
   return {
-    hackDetails : state.hackDetailsReducer.hackDetails
+    hackDetails : state.hackDetailsReducer.hackDetails,
+    fetchingData : state.hackDetailsReducer.fetchingData
   }
 }
 
-export default connect(mapStateToProps)(DetailsComp);
+function mapDispatchToProps(dispatch){
+  return {
+    fetchData : () =>{
+      Api.fetchuserDetails(dispatch);
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(DetailsComp);
