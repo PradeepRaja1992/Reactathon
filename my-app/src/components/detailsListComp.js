@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import '../App.css';
 import Modal from 'react-responsive-modal';
-import registrationMod from '../components/models/registrationModal';
+import RegModal from '../components/models/registrationModal';
 
 const styles = {
     fontFamily: "sans-serif",
@@ -41,8 +41,8 @@ class detailsList extends Component{
     render(){
         const { open } = this.state;
         return (
-            <div className="item hackDetailsPadding" onClick={this.toggleContent}>
-                <div className="ui grid">
+            <div className="item hackDetailsPadding" >
+                <div className="ui grid" onClick={this.toggleContent}>
                     <div className="two wide column">
                         <div className="ui label">
                             <i className="clock outline icon"></i> {this.props.duration} Days
@@ -88,15 +88,15 @@ class detailsList extends Component{
                             <span className="summaryFont">Organiser Contact</span> : <span>{this.props.organiser_contact}</span>   
                        </div>
                     </div> 
-                    <registrationMod></registrationMod>    
+                    
                     <div style={{float : 'right', marginTop:'-0.4rem'}}>
                         <button className="ui primary button" onClick={this.onOpenModal}>
                             Register
                         </button>                        
-                    </div>                    
-                    <Modal open={open} onClose={this.onCloseModal} center>
-                      
-                    </Modal>               
+                    </div>   
+                    <Modal open={open} onClose={this.onCloseModal} center>  
+                        <RegModal></RegModal>
+                    </Modal>   
                 </div>            
             </div>        
         )
