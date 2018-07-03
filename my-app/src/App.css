@@ -1,4 +1,30 @@
-.detailsList{
-  box-shadow : 1px 1px 1px 1px grey;
-  width : 70%;
+.detailsList{  
+  width: 70%;
+  margin-left: 20rem !important;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.textAlign {  
+  text-align:  center;
+}
+
+.hackDetailsPadding {  
+  padding: 1rem !important;
+  padding-top:  0.5rem !important;
+}
+
+.summaryFont {
+  font-weight : bold;
+  font-size: 10pt;
+  font-family:arial;
+}
+
+.summaryBlock {
+  display: block;
+  box-shadow: 1px 1px 1px 1px grey;
+  padding: 1rem;
+  margin-top: 1rem;
 }

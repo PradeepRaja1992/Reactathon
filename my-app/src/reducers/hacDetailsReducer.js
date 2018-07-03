@@ -1,6 +1,7 @@
 
 const initialState ={
-    hackDetails :[{"header":"Reactathon","desc":"My description"},{"header":"testathon","desc":"My description"}]
+    fetchingData :true,
+    hackDetails :[]
 }
 const detailsReducer = (state=initialState, action) =>{
   switch(action.type){
@@ -12,7 +13,7 @@ const detailsReducer = (state=initialState, action) =>{
     case "DETAILS_FETCHED":{
         return {
           ...state,
-          fatchinData : false,
+          fetchingData : false,
           hackDetails : action.payload
         }
     }         

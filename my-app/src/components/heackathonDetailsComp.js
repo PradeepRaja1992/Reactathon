@@ -5,21 +5,28 @@ import Api from '../Api/hackDetailsApi';
 
 class DetailsComp extends Component{
 
-  componentDidMount(){
-    console.log("My compoenent will mound ",this.props);
+  componentDidMount(){   
     this.props.fetchData();
   }
 
   render(){
+    console.log(" My fetching data ",this.props.fetchingData);
+    if(this.props.fetchingData){
+      return (        
+          <div className="ui active inverted dimmer">
+            <div className="ui text loader">Loading</div>
+          </div>
+      )
+    }
     return(
-      <div>
-            <div className="ui relaxed divided list">       
-             {
-               this.props.hackDetails.map((details) =>{
-                return ( <DetailsList {...details} /> )
-                })
-             }
-            </div>         
+      <div>         
+            <div className="ui relaxed divided list">                
+              {
+                this.props.hackDetails.map((details,index) =>{
+                  return ( <DetailsList key={index} {...details} /> )
+                  })
+              }              
+          </div>       
       </div>
     )
   }
