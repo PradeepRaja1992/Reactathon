@@ -19,7 +19,7 @@ const WinnerMod =(props) =>{
                     <i class="gift icon"></i>
                     {props.place}
                 </a>
-            </div>
+            </div> 
         </div>     
     )
 }
