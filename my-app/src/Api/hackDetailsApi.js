@@ -3,25 +3,30 @@ import axios from 'axios';
 const fetchuserDetails = (dispatch) => {
     //api call
     dispatch({type :"DETAILS_FETCH_CALL"});
-    axios.get('https://randomuser.me/api/?results=50')
-    .then(response => {
-        let data = [{"name":"Reactathon","description":"My description","duration":"3","registration_close_date": "8/3/2018","venue":"Chennai",
-        "portfolio":"CMB","start_date":"2018-07-02","end_date":"2018-07-04","organiser_name":"Pradeep","organiser_contact":"r.pradeep@verizon.com"},
-{"name":"Testathon","description":"My description","duration":"4","registration_close_date": "8/3/2018","venue":"Hyderbad","portfolio":"CMB",
-        "portfolio":"CMB","start_date":"2018-07-02","end_date":"2018-07-04","organiser_name":"Pradeep","organiser_contact":"r.pradeep@verizon.com"}];
-        dispatch({type :"DETAILS_FETCHED", payload : data});
+    axios.get('http://localhost:3000/api/event/findEvents')
+    .then(response => {       
         console.log(response);
+        dispatch({type :"DETAILS_FETCHED", payload : response.data});
+       
     })
     .catch(error => {
       console.log(error);
-    })
-    /*setTimeout(function(){
-       let data = [{"name":"Reactathon","description":"My description","duration":"3","registration_close_date": "8/3/2018","venue":"Chennai",
-        "portfolio":"CMB","start_date":"2018-07-02","end_date":"2018-07-04","organiser_name":"Pradeep","organiser_contact":"r.pradeep@verizon.com"},
-{"name":"Testathon","description":"My description","duration":"4","registration_close_date": "8/3/2018","venue":"Hyderbad","portfolio":"CMB",
-        "portfolio":"CMB","start_date":"2018-07-02","end_date":"2018-07-04","organiser_name":"Pradeep","organiser_contact":"r.pradeep@verizon.com"}];
-        dispatch({type :"DETAILS_FETCHED", payload : data});
-    },1000 );  */
+    })  
 }
+
+
+const registerUser = (userobj) => {
+    //api call
+    dispatch({type :"REGISTER_USER_CALL"});
+    axios.get('http://localhost:3000/api/event/set')
+    .then(response => {       
+        console.log(response);
+        dispatch({type :"REGISTERD_USER", payload : response.data});
+       
+    })
+    .catch(error => {
+      console.log(error);
+    })  
+} 
 
 export default {fetchuserDetails};
