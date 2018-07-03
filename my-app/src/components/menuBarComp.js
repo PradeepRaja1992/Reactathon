@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import Route from 'react-router-dom/Route';
 import DetailsComp from './heackathonDetailsComp';
+import ManagementView from '../components/managementView/managemenComp';
 
 class MenuBar extends Component {
   render(){
@@ -11,7 +12,7 @@ class MenuBar extends Component {
             <div>
                <div className="ui secondary pointing menu">                 
                   <NavLink className="item" to="/">Home</NavLink>                
-                  <NavLink className="item" to="/menu">Menu 2</NavLink>                 
+                  <NavLink className="item" to="/mgView"> Management View</NavLink>                 
                   <div className="right menu">
                      <a className="ui item">
                        Logout
@@ -21,9 +22,9 @@ class MenuBar extends Component {
                <div className="ui segment detailsList">
                  <Route exact strict path="/" component={DetailsComp} />                
               
-                 <Route exact strict path="/menu" render = {
+                 <Route exact strict path="/mgView" render = {
                     () =>{
-                      return (<h1>Menu Page</h1>)
+                      return (<ManagementView />)
                     }
                   } />
                 </div>

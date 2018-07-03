@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
+import Api from '../../Api/hackDetailsApi';
 
 class RegistrationMod extends Component {
+
     render(){
         console.log("registration modal ",this.props.registration);
         return (           
@@ -41,7 +43,7 @@ class RegistrationMod extends Component {
                             <input type="text" name="Mobile" placeholder="Mobile" value={this.props.registration.mobile_no} 
                             onChange={this.props.updateRegistrationObj.bind(this,"UPDATE_MOBILE")} />
                         </div>
-                        <button className="ui button" type="submit">Submit</button>
+                        <button className="ui button" type="submit" onClick={this.props.registerUser.bind(this,this.props.registerUser)}>Submit</button>
                     </form>
                 </div>          
         )
@@ -59,6 +61,9 @@ function mapDispatchToProps(dispatch){
     return {
         updateRegistrationObj : (arg,e) =>{
             dispatch({type: arg, payload : e.target.value});
+        },
+        registerUser : (teamObj) =>{
+            Api.registerUser(dispatch,teamObj);
         }
     }
 }
