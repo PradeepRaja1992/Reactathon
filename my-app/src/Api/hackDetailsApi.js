@@ -2,8 +2,8 @@ import axios from 'axios';
 
 const fetchuserDetails = (dispatch) => {
     //api call
-    dispatch({type :"DETAILS_FETCH_CALL"});
-   /**  axios.get('http://10.74.17.199:3000/api/event/findEvents')
+   /* dispatch({type :"DETAILS_FETCH_CALL"});
+     axios.get('http://10.74.17.199:3000/api/event/findEvents')
     .then(response => {       
         //console.log(response);
         dispatch({type :"DETAILS_FETCHED", payload : response.data});
@@ -11,7 +11,7 @@ const fetchuserDetails = (dispatch) => {
     })
     .catch(error => {
       console.log(error);
-    })  **/
+    }) */ 
     setTimeout(function(){
         let data = [{eventid:"1","name":"Reactathon","description":"My description","duration":"3","registration_close_date": "8/3/2018","venue":"Chennai",
         "portfolio":"CMB","start_date":"2018-07-02","end_date":"2018-07-04","organiser_name":"Pradeep","organiser_contact":"r.pradeep@verizon.com"},

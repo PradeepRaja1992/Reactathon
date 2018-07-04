@@ -10,11 +10,11 @@ class MenuBar extends Component {
       <div>
          <Router>
             <div>
-               <div className="ui secondary pointing menu">                 
-                  <NavLink className="item" to="/">Home</NavLink>                
-                  <NavLink className="item" to="/mgView"> Management View</NavLink>                 
+               <div className="ui secondary pointing menu"  style={{background:'white'}}>                 
+                  <NavLink className="item" to="/" style={{fontSize:'12pt',fontFamily:'arial'}}>Home</NavLink>                
+                  <NavLink className="item" to="/mgView" style={{fontSize:'12pt',fontFamily:'arial'}}> Management View</NavLink>                 
                   <div className="right menu">
-                     <a className="ui item">
+                     <a className="ui item" style={{fontSize:'12pt',fontFamily:'arial'}}>
                        Logout
                      </a>
                    </div>

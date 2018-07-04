@@ -50,10 +50,10 @@ class ManagementView extends Component {
         return (
             <div className="ui segment detailsList">
                 <div>
-                    <h2>ManagementView</h2>
-                    <div>Filter : Reactathon</div>
+                    <h2 style={{textAlign:'center'}}>Management Dashboard</h2>
+                    <div className='filter'>Filter : Reactathon</div>
                     <div style={{padding:'1rem',marginLeft:'13.5rem'}}>
-                        <h3>Participants (%) Per Organisation</h3>
+                        <h3>Participants (%) Per Organization</h3>
                     </div>
                     <div className="ui grid">                    
                         <div className="eight wide column" style={{marginTop:'5rem'}}>                            
@@ -71,7 +71,7 @@ class ManagementView extends Component {
                 <div className="graphContainer">
                     <div className='filter'>Filter : Organisation</div>
                     <div style={{padding:'1rem',textAlign :'center'}}>
-                        <h3>Hackathons % Per Organisation</h3>
+                        <h3>Hackathons (%) Per Organization</h3>
                     </div>
                     <div className="ui grid">                    
                         <div className="eight wide column" style={{marginTop:'3rem',marginLeft:'24rem'}}>                            
