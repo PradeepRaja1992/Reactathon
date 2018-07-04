@@ -28,3 +28,23 @@
   padding: 1rem;
   margin-top: 1rem;
 }
+
+.graphContainer {  
+  margin-top: 4rem;
+  border-top: 2px solid darkgrey; 
+  padding-top: 1rem;
+}
+
+.filter {  
+  font-size: 13pt;
+  font-family:  arial;
+  font-weight: bold;
+}
+
+.regBlock {  
+  width: 65%;
+  background: #d3d3d345;
+  margin-left: 9rem;
+  padding: 1rem;
+  box-shadow: 1px 1px 1px 1px grey;
+}

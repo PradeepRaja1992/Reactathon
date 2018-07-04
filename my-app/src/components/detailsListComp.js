@@ -95,7 +95,7 @@ class detailsList extends Component{
                         </button>                        
                     </div>   
                     <Modal open={open} onClose={this.onCloseModal} center>  
-                        <RegModal></RegModal>
+                        <RegModal eventid={this.props.eventid}></RegModal>
                     </Modal>   
                 </div>            
             </div>        

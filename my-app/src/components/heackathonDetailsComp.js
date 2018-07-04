@@ -12,14 +12,14 @@ class DetailsComp extends Component{
   render(){
     console.log(" My fetching data ",this.props.fetchingData);
     if(this.props.fetchingData){
-      return (        
+      return (       
           <div className="ui active inverted dimmer">
             <div className="ui text loader">Loading</div>
           </div>
       )
     }
     return(
-      <div>         
+      <div className="ui segment detailsList">         
             <div className="ui relaxed divided list">                
               {
                 this.props.hackDetails.map((details,index) =>{

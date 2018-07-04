@@ -19,7 +19,7 @@ class MenuBar extends Component {
                      </a>
                    </div>
                </div>
-               <div className="ui segment detailsList">
+               <div>
                  <Route exact strict path="/" component={DetailsComp} />                
               
                  <Route exact strict path="/mgView" render = {
@@ -27,7 +27,7 @@ class MenuBar extends Component {
                       return (<ManagementView />)
                     }
                   } />
-                </div>
+              </div>
            </div>
         </Router>
       </div>

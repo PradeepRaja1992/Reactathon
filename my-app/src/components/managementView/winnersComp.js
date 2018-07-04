@@ -2,21 +2,25 @@ import React,{Component } from 'react';
 
 const WinnerMod =(props) =>{
     return(
-        <div class="ui card">
-            <div class="image">               
+        <div className="ui card" style={{ marginLeft: '8rem'}}>
+            <div className="image">               
             </div>
-            <div class="content">
-                <a class="header">{props.team}</a>
-                <div class="meta">
-                <span class="date">Joined in 2013</span>
+            <div className="content">
+                <a className="header">{props.team}</a>
+                <div className="meta">               
                 </div>
-                <div class="description">
-                    Kristy is an art director living in New York.
+                <div className="description">                    
+                    {
+                        props.winnerNameList.map((winner) =>
+                        {
+                            return (<span style={{display:'block'}}>{winner.name} - ({winner.portfolio})</span>)
+                        })
+                    }                    
                 </div>
             </div>
-            <div class="extra content">
-                <a>
-                    <i class="gift icon"></i>
+            <div className="extra content" style={{backgroundColor: 'lightseagreen'}}>
+                <a style={{fontSize: '12pt',fontSamily: 'cursive'}}> 
+                    <i className="gift icon"></i>
                     {props.place}
                 </a>
             </div> 
